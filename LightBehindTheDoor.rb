@@ -133,7 +133,7 @@ in_thread do
   sleep 0.5
   loop do
     use_synth :pnoise
-    play :C2, amp: 0.05
+    play :C2, amp: 0.075
     sleep 1
   end
 end
