@@ -68,22 +68,34 @@ in_thread do
     sleep 0.25
     play :C
     sleep 0.75
+    
+    synth :dark_ambience
+    play :G
+    sleep 0.5
+    play :A
+    sleep 0.75
+    play :C
+    sleep 0.25
+    play :D
+    sleep 1
   end
 end
 
 in_thread do
   loop do
-    2.times do
+    3.times do
       sample :ambi_drone
       sleep 1.25
       sample :ambi_swoosh
       sleep 0.75
     end
-    2.times do
-      use_synth :growl
-      play :A
-      sleep 2
-    end
+    use_synth :growl
+    play :G, amp: 0.5
+    sleep 0.75
+    play :A, amp: 0.5
+    sleep 1.25
+    play :C, amp: 0.5
+    sleep 2
   end
 end
 
@@ -120,7 +132,7 @@ in_thread do
     end
     if count2 == 3
       sample :bass_woodsy_c
-      sleep 3
+      sleep 1.5
       sample :bass_woodsy_c
       sleep 2
       count2 = 0
