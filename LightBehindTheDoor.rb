@@ -81,6 +81,7 @@ in_thread do
     end
     2.times do
       use_synth :growl
+      play :A
       sleep 2
     end
   end
