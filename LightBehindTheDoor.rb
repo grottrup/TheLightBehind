@@ -69,14 +69,14 @@ in_thread do
     play :C
     sleep 0.75
     
-    synth :dark_ambience
-    play :G
+    use_synth :dark_ambience
+    play :G, amp: 4
     sleep 0.5
-    play :A
+    play :A, amp: 4
     sleep 0.75
-    play :C
+    play :C, amp: 4
     sleep 0.25
-    play :D
+    play :D, amp: 4
     sleep 1
   end
 end
