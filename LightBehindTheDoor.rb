@@ -1,7 +1,7 @@
 
 in_thread do
   live_loop :guilt do
-    2.times do
+    1.times do
       use_synth :dark_ambience
       sleep 0.5
       play :C2, amp: 2, attack: 0.1, sustain: 0.2
@@ -80,9 +80,25 @@ in_thread do
       play :D, amp: 4
       sleep 1
     end
+    use_synth :beep
+    play :A
+    sleep 1
+    play :G
+    sleep 0.25
+    play :A
+    sleep 0.25
+    
     use_synth :pluck
     with_fx :echo, mix: 0.5, phase: 0.5 do
-      play :G, amp: 4, attack: 0.3, sustain: 1.5, release: 4, sustain_level: 0.6
+      play :B, amp: 1, attack: 0.3, sustain: 0.8, release: 2, sustain_level: 0.6
+    end
+    sleep 1
+    with_fx :echo, mix: 0.5, phase: 0.5 do
+      play :A, amp: 2, attack: 0.3, sustain: 1, release: 1.9, sustain_level: 0.6
+    end
+    sleep 2
+    with_fx :echo, mix: 0.5, phase: 0.5 do
+      play :G, amp: 3, attack: 0.3, sustain: 1.5, release: 4, sustain_level: 0.6
     end
     sleep 4
   end
@@ -133,6 +149,8 @@ in_thread do
     count = count + 1
     if count == 3
       sample :bass_trance_c
+      use_synth :beep
+      play :G, amp: 0.5
       sleep 1
       count = 0
       count2 = count2 + 1
