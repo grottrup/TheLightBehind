@@ -44,9 +44,31 @@ in_thread do
 end
 
 in_thread do
+  sleep 2.5
+  loop do
+    8.times do
+      4.times do
+        2.times do
+          sample :bd_808
+          sleep 2
+        end
+        sample :ambi_glass_hum
+        sleep 1
+      end
+      sample :ambi_haunted_hum
+      sleep 1
+    end
+    sample :ambi_glass_rub
+    sleep 1
+    sample :ambi_piano
+    sleep 1
+  end
+end
+
+in_thread do
   sleep 1.5
   loop do
-    sample :drum_heavy_kick
-    sleep 1
+    sample :bd_pure
+    sleep 0.5
   end
 end
